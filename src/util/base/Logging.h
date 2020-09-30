@@ -106,17 +106,17 @@ namespace base {
     //   else
     //     logWarnStream << "Bad news";
     //
-#define LOG_TRACE if (muduo::Logger::logLevel() <= muduo::Logger::TRACE) \
-  muduo::Logger(__FILE__, __LINE__, muduo::Logger::TRACE, __func__).stream()
-#define LOG_DEBUG if (muduo::Logger::logLevel() <= muduo::Logger::DEBUG) \
-  muduo::Logger(__FILE__, __LINE__, muduo::Logger::DEBUG, __func__).stream()
-#define LOG_INFO if (muduo::Logger::logLevel() <= muduo::Logger::INFO) \
-  muduo::Logger(__FILE__, __LINE__).stream()
-#define LOG_WARN muduo::Logger(__FILE__, __LINE__, muduo::Logger::WARN).stream()
-#define LOG_ERROR muduo::Logger(__FILE__, __LINE__, muduo::Logger::ERROR).stream()
-#define LOG_FATAL muduo::Logger(__FILE__, __LINE__, muduo::Logger::FATAL).stream()
-#define LOG_SYSERR muduo::Logger(__FILE__, __LINE__, false).stream()
-#define LOG_SYSFATAL muduo::Logger(__FILE__, __LINE__, true).stream()
+#define LOG_TRACE if (base::Logger::logLevel() <= base::Logger::TRACE) \
+  base::Logger(__FILE__, __LINE__, base::Logger::TRACE, __func__).stream()
+#define LOG_DEBUG if (base::Logger::logLevel() <= base::Logger::DEBUG) \
+  base::Logger(__FILE__, __LINE__, base::Logger::DEBUG, __func__).stream()
+#define LOG_INFO if (base::Logger::logLevel() <= base::Logger::INFO) \
+  base::Logger(__FILE__, __LINE__).stream()
+#define LOG_WARN base::Logger(__FILE__, __LINE__, base::Logger::WARN).stream()
+#define LOG_ERROR base::Logger(__FILE__, __LINE__, base::Logger::ERROR).stream()
+#define LOG_FATAL base::Logger(__FILE__, __LINE__, base::Logger::FATAL).stream()
+#define LOG_SYSERR base::Logger(__FILE__, __LINE__, false).stream()
+#define LOG_SYSFATAL base::Logger(__FILE__, __LINE__, true).stream()
 
     const char *strerror_tl(int savedErrno);
 
@@ -126,7 +126,7 @@ namespace base {
     // initializer lists.
 
 #define CHECK_NOTNULL(val) \
-  ::muduo::CheckNotNull(__FILE__, __LINE__, "'" #val "' Must be non NULL", (val))
+  ::base::CheckNotNull(__FILE__, __LINE__, "'" #val "' Must be non NULL", (val))
 
 // A small helper for CHECK_NOTNULL().
     template <typename T>

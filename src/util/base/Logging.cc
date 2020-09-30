@@ -38,9 +38,9 @@ namespace base {
     }
 
     Logger::LogLevel initLogLevel() {
-        if (::getenv("MUDUO_LOG_TRACE"))
+        if (::getenv("BASE_LOG_TRACE"))
             return Logger::TRACE;
-        else if (::getenv("MUDUO_LOG_DEBUG"))
+        else if (::getenv("BASE_LOG_DEBUG"))
             return Logger::DEBUG;
         else
             return Logger::INFO;

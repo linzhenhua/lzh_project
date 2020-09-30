@@ -1,0 +1,1 @@
+c++  -O0  -rdynamic CMakeFiles/cmake_test.dir/main.cc.o  -o ../bin/cmake_test  -Wl,-rpath,/root/git/lzh_project/build/lib ../lib/libnet.so ../lib/libbase.so -lpthread -lrt 

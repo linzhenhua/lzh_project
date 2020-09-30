@@ -11,5 +11,6 @@
     },
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
 }
