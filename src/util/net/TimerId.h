@@ -1,36 +1,32 @@
 #ifndef NET_TIMERID_H
 #define NET_TIMERID_H
 
-#include "base/copyable.h"
+#include "util/base/copyable.h"
 
 namespace base {
-    namespace net {
+namespace net {
 
-        class Timer;
+class Timer;
 
-        ///
-        /// An opaque identifier, for canceling Timer.
-        ///
-        class TimerId : public base::copyable {
-        public:
-            TimerId()
-                : timer_(NULL),
-                sequence_(0) {}
+///
+/// An opaque identifier, for canceling Timer.
+///
+class TimerId : public base::copyable {
+ public:
+  TimerId() : timer_(NULL), sequence_(0) {}
 
-            TimerId(Timer *timer, int64_t seq)
-                : timer_(timer),
-                sequence_(seq) {}
+  TimerId(Timer *timer, int64_t seq) : timer_(timer), sequence_(seq) {}
 
-            // default copy-ctor, dtor and assignment are okay
+  // default copy-ctor, dtor and assignment are okay
 
-            friend class TimerQueue;
+  friend class TimerQueue;
 
-        private:
-            Timer *timer_;
-            int64_t sequence_;
-        };
+ private:
+  Timer *timer_;
+  int64_t sequence_;
+};
 
-    }  // namespace net
+}  // namespace net
 }  // namespace base
 
 #endif  // NET_TIMERID_H

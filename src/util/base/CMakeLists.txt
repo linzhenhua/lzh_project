@@ -22,5 +22,3 @@ target_link_libraries(base pthread rt)
 
 # 安装文件到目录下
 install(TARGETS base LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib)
-file(GLOB HEADERS "*.h")
-install(FILES ${HEADERS} DESTINATION ${PROJECT_SOURCE_DIR}/include/base)

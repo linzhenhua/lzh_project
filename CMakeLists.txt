@@ -5,7 +5,7 @@ set(CMAKE_C_COMPILER /usr/local/bin/gcc)
 set(CMAKE_CXX_COMPILER /usr/local/bin/g++)
 
 # 设置可执行文件名字
-set(project_name cmake_test)
+set(project_name main)
 project(${project_name})
 
 # 设置默认为Debug版本
@@ -45,8 +45,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 find_package(Boost REQUIRED)
 
 # 添加多个头文件搜索路径
-include_directories(${PROJECT_SOURCE_DIR}/include)
-include_directories(${Boost_INCLUDE_DIRS})
-include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/src
+ ${Boost_INCLUDE_DIRS}
+ ${PROJECT_SOURCE_DIR})
 
 add_subdirectory(src/)

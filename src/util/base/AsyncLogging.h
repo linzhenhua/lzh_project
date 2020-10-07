@@ -1,15 +1,15 @@
 #ifndef BASE_ASYNCLOGGING_H
 #define BASE_ASYNCLOGGING_H
 
-#include "base/BlockingQueue.h"
-#include "base/BoundedBlockingQueue.h"
-#include "base/CountDownLatch.h"
-#include "base/Mutex.h"
-#include "base/Thread.h"
-#include "base/LogStream.h"
-
 #include <atomic>
 #include <vector>
+
+#include "BlockingQueue.h"
+#include "BoundedBlockingQueue.h"
+#include "CountDownLatch.h"
+#include "Mutex.h"
+#include "Thread.h"
+#include "LogStream.h"
 
 namespace base {
 
