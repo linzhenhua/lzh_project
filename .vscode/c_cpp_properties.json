@@ -4,6 +4,9 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/src/**",
+                "${workspaceFolder}/src/util/base/**",
+                "${workspaceFolder}/src/util/net/**",
+                "${workspaceFolder}/src/util/net/poller/**",
                 "/usr/include/**",
                 "/usr/local/include/**"
             ],
