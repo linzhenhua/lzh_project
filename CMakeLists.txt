@@ -47,6 +47,6 @@ find_package(Boost REQUIRED)
 # 添加多个头文件搜索路径
 include_directories(${PROJECT_SOURCE_DIR}/src
  ${Boost_INCLUDE_DIRS}
- ${PROJECT_SOURCE_DIR})
+ ${PROJECT_SOURCE_DIR}/thirdparty/include)
 
 add_subdirectory(src/)

@@ -26,19 +26,3 @@ target_link_libraries(net base)
 
 # 安装文件到目录下
 install(TARGETS net LIBRARY DESTINATION ${PROJECT_SOURCE_DIR}/lib)
-
-set(HEADERS
-  Buffer.h
-  Callbacks.h
-  Channel.h
-  Endian.h
-  EventLoop.h
-  EventLoopThread.h
-  EventLoopThreadPool.h
-  InetAddress.h
-  TcpClient.h
-  TcpConnection.h
-  TcpServer.h
-  TimerId.h
-  )
-install(FILES ${HEADERS} DESTINATION ${PROJECT_SOURCE_DIR}/include/net)
