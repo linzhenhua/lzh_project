@@ -16,17 +16,14 @@ endif()
 # 设置C++编译选项
 set(CMAKE_CXX_FLAGS_DEBUG "-O0")
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
-set(CMAKE_CXX_COMPILER "c++")
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-set(CXX_FLAGS
+set(CMAKE_CXX_FLAGS
  -g
  -DCHECK_PTHREAD_RETURN_VALUE
  -D_FILE_OFFSET_BITS=64
  -Wall
  -Wextra
- -Werror
- -Wconversion
+ #-Werror
+ #-Wconversion
  -Wno-unused-parameter
  -Wold-style-cast
  -Woverloaded-virtual
@@ -39,6 +36,8 @@ set(CXX_FLAGS
  )
 string(REPLACE ";" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
+message(STATUS "CMAKE_CXX_FLAGS: " "${CMAKE_CXX_FLAGS}")
+
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
@@ -46,7 +45,9 @@ find_package(Boost REQUIRED)
 
 # 添加多个头文件搜索路径
 include_directories(${PROJECT_SOURCE_DIR}/src
- ${Boost_INCLUDE_DIRS}
  ${PROJECT_SOURCE_DIR}/thirdparty/include)
+
+ link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib
+  )
 
 add_subdirectory(src/)
