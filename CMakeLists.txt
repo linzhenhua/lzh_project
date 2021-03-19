@@ -1,11 +1,11 @@
 # cmake版本要求
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.6)
 
 set(CMAKE_C_COMPILER /usr/local/bin/gcc)
 set(CMAKE_CXX_COMPILER /usr/local/bin/g++)
 
 # 设置可执行文件名字
-set(project_name main)
+set(project_name test)
 project(${project_name})
 
 # 设置默认为Debug版本
@@ -14,21 +14,21 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # 设置C++编译选项
-set(CMAKE_CXX_FLAGS_DEBUG "-O0")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
+set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g")
+set(CMAKE_CXX_FLAGS_RELEASE "-g -O2 -DNDEBUG")
 set(CMAKE_CXX_FLAGS
  -g
  -DCHECK_PTHREAD_RETURN_VALUE
  -D_FILE_OFFSET_BITS=64
  -Wall
  -Wextra
- #-Werror
+ -Werror
  #-Wconversion
  -Wno-unused-parameter
- -Wold-style-cast
- -Woverloaded-virtual
+ #-Wold-style-cast
+ #-Woverloaded-virtual
  -Wpointer-arith
- -Wshadow
+ #-Wshadow
  -Wwrite-strings
  -march=native
  -std=c++17
@@ -45,9 +45,10 @@ find_package(Boost REQUIRED)
 
 # 添加多个头文件搜索路径
 include_directories(${PROJECT_SOURCE_DIR}/src
- ${PROJECT_SOURCE_DIR}/thirdparty/include)
+ ${PROJECT_SOURCE_DIR}/thirdparty/include
+ )
 
- link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib
-  )
+ link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib/workflow/
+ )
 
 add_subdirectory(src/)
