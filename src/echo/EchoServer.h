@@ -1,7 +1,7 @@
 #ifndef ECHO_H
 #define ECHO_H
 
-#include "util/net/TcpServer.h"
+#include <util/net/TcpServer.h>
 
 class EchoServer {
  public:
@@ -18,5 +18,7 @@ class EchoServer {
 
   base::net::TcpServer server_;
 };
+
+void echo_test();
 
 #endif

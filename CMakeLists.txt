@@ -10,7 +10,7 @@ project(${project_name})
 
 # 设置默认为Debug版本
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Debug")
+  set(CMAKE_BUILD_TYPE "RelWithDebInfo")
 endif()
 
 # 设置C++编译选项

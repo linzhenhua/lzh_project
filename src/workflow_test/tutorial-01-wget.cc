@@ -3,9 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
 #include <string>
-
 #include "workflow/HttpMessage.h"
 #include "workflow/HttpUtil.h"
 #include "workflow/WFTaskFactory.h"
@@ -79,3 +77,19 @@ void wget_callback(WFHttpTask *task) {
 static WFFacilities::WaitGroup wait_group(1);
 
 void sig_handler(int signo) { wait_group.done(); }
+
+void wget_test() {
+  WFHttpTask *task;
+  signal(SIGINT, sig_handler);
+
+  std::string url = "http://www.baidu.com";
+  task = WFTaskFactory::create_http_task(url, REDIRECT_MAX, RETRY_MAX,
+                                         wget_callback);
+  protocol::HttpRequest *req = task->get_req();
+  req->add_header_pair("Accept", "*/*");
+  req->add_header_pair("User-Agent", "Wget/1.14 (linux-gnu)");
+  req->add_header_pair("Connection", "close");
+  task->start();
+
+  wait_group.wait();
+}
