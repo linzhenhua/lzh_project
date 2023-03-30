@@ -1,2 +1,4 @@
 /build/ 
 /thirdparty/
+/CMakeFiles/
+/CMakeCache.txt

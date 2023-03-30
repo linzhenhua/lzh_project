@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.6)
 
 set(CMAKE_C_COMPILER /usr/bin/gcc)
 set(CMAKE_CXX_COMPILER /usr/bin/g++)
+# set(CMAKE_C_COMPILER /usr/local/bin/gcc)
+# set(CMAKE_CXX_COMPILER /usr/local/bin/g++)
 
 # 设置可执行文件名字
 set(project_name test)
