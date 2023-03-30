@@ -14,5 +14,5 @@
     "explorer.compactFolders": false,
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "editor.fontSize": 18,
-    "cmake.cmakePath": "/usr/local/bin/cmake"
+    "cmake.cmakePath": "/usr/bin/cmake"
 }
