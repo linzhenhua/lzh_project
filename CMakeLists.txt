@@ -50,7 +50,4 @@ include_directories(${PROJECT_SOURCE_DIR}/src
  ${PROJECT_SOURCE_DIR}/thirdparty/include
  )
 
- link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib/workflow/
- )
-
 add_subdirectory(src/)
