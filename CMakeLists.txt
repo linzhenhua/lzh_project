@@ -25,15 +25,15 @@ set(CMAKE_CXX_FLAGS
  -Wall
  -Wextra
  -Werror
- #-Wconversion
+ # -Wconversion
  -Wno-unused-parameter
- #-Wold-style-cast
- #-Woverloaded-virtual
+ # -Wold-style-cast
+ -Woverloaded-virtual
  -Wpointer-arith
  #-Wshadow
  -Wwrite-strings
  -march=native
- -std=c++17
+ -std=c++20
  -rdynamic
  )
 string(REPLACE ";" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -46,8 +46,9 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 find_package(Boost REQUIRED)
 
 # 添加多个头文件搜索路径
-include_directories(${PROJECT_SOURCE_DIR}/src
- ${PROJECT_SOURCE_DIR}/thirdparty/include
+include_directories(
+    ${PROJECT_SOURCE_DIR}/src
+    ${PROJECT_SOURCE_DIR}/thirdparty/include
  )
 
 add_subdirectory(src/)

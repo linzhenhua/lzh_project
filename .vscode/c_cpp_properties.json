@@ -8,7 +8,8 @@
                 "${workspaceFolder}/src/util/net/**",
                 "${workspaceFolder}/src/util/net/poller/**",
                 "/usr/include/**",
-                "/usr/local/include/**"
+                "/usr/local/include/**",
+                "${workspaceFolder}/thirdparty/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",
