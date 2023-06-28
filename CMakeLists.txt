@@ -22,20 +22,21 @@ set(CMAKE_CXX_FLAGS
  -g
  -DCHECK_PTHREAD_RETURN_VALUE
  -D_FILE_OFFSET_BITS=64
- -Wall
- -Wextra
- -Werror
+ #-Wall
+ #-Wextra
+ #-Werror
  # -Wconversion
- -Wno-unused-parameter
+ #-Wno-unused-parameter
  # -Wold-style-cast
- -Woverloaded-virtual
- -Wpointer-arith
+ #-Woverloaded-virtual
+ #-Wpointer-arith
  #-Wshadow
- -Wwrite-strings
+ #-Wwrite-strings
  -march=native
  -std=c++20
  -rdynamic
  )
+
 string(REPLACE ";" " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 message(STATUS "CMAKE_CXX_FLAGS: " "${CMAKE_CXX_FLAGS}")
@@ -50,5 +51,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/src
     ${PROJECT_SOURCE_DIR}/thirdparty/include
  )
+
+ link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib/nghttp2)
 
 add_subdirectory(src/)

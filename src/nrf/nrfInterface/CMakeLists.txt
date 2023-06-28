@@ -1,5 +1,5 @@
 set(SOURCE_DIR
- main.cc
+ nrf_test.cc
 )
 
 add_subdirectory(lib/)
